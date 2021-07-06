@@ -11,6 +11,16 @@ const students = [
   new Student('Clara', 20),
 ];
 
+function generateTable() {
+  const table = document.querySelector('table');
+  // Terima kasih, A. Tangguh Wisesa.
+  students.map((student) => {
+    table.insertRow().innerHTML = `<td>${student.name}</td><td>${student.age}</td>`;
+  });
+}
+
+function calculateAverageAge(acc, { age = 20 }) {
+  return acc + age;
 }
 
 function getAverageAge(students) {
@@ -22,3 +32,4 @@ document.getElementById('getAverageButton').addEventListener('click', () => {
   document.getElementById('averageText').innerHTML = getAverageAge(students);
 });
 
+generateTable();
