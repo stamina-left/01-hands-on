@@ -13,4 +13,12 @@ const students = [
 
 }
 
-counter();
+function getAverageAge(students) {
+  const totalAge = students.reduce(calculateAverageAge, 0);
+  return totalAge / students.length;
+}
+
+document.getElementById('getAverageButton').addEventListener('click', () => {
+  document.getElementById('averageText').innerHTML = getAverageAge(students);
+});
+
